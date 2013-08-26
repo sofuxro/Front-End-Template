@@ -6,51 +6,68 @@
   ################################*/
 
 
-.gradient(@fb, @top, @bot) { background-color:@fb; background-image:-webkit-linear-gradient(top, @top, @bot); background-image:linear-gradient(to bottom, @top, @bot); }
-.clearfix() {
-    &:before, &:after { content:" "; display:table; }
-    &:after { clear:both; }
-}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Mixins *//*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+    @import 'mixins';
 
 
 
 
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,button,cite,code,del,dfn,em,fieldset,figure,font,img,input,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,select,tbody,textarea,tfoot,thead,tr,th,td{margin:0;padding:0;border:0 none;outline:0 none;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0 none}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}a,button,input[type="submit"],input[type="reset"]{cursor:pointer}a{text-decoration:none}a:hover{text-decoration:underline}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,details{display:block;}img{color:transparent;font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic;}svg{overflow:hidden;}p,a{word-wrap:break-word;}
-/* end of reset */
-/* Golden ratio (0.62 + 0.38) -> for 1200px = 744px + 456px */
-
-* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
-.clear { height:0; width:0; clear:both; }
-.hidden { display:none; }
-.clearfix {
-    &:before, &:after { content:" "; display:table; }
-    &:after { clear:both; }
-}
+    html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,button,cite,code,del,dfn,em,fieldset,figure,font,img,input,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,select,tbody,textarea,tfoot,thead,tr,th,td{margin:0;padding:0;border:0 none;outline:0 none;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0 none}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}a,button,input[type="submit"],input[type="reset"]{cursor:pointer}a{text-decoration:none}a:hover{text-decoration:underline}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,details{display:block;}img{color:transparent;font-size:0;vertical-align:middle;}svg{overflow:hidden;}p,a{word-wrap:break-word;}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}html,button,input,select,textarea{font-family:sans-serif;}a:active,a:hover{outline:0;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}textarea{overflow:auto;}
+    /* end of reset */
+    /* Golden ratio (0.62 + 0.38) -> for 1200px = 744px + 456px */
 
 
-html, body { min-height:100%; }
-body { min-width:480px; font-family:Arial, Helvetica, sans-serif; }
+    .clear { height:0; width:0; clear:both; }
+
+    .hidden  { display:none; visibility:none; }
+    .vhidden { border:0; clip:rect(0 0 0 0); height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; width:1px; }
+
+
+    .clearfix { &:before, &:after { content:" "; display:table; } &:after { clear:both; } }
+
+    ::-moz-selection { background:#B3D4FC; text-shadow:none; }
+    ::selection      { background:#B3D4FC; text-shadow:none; }
+
+    html, body { min-height:100%; }
+    body { overflow-x:hidden; font-family:Arial, Helvetica, sans-serif; }
 
 
 
 
-/*
-* Anything smaller then 1024 (common styling for small resolutions)
-*/
-@media only screen and (max-width:1024px) {
-}
 
 
-/*
-*  Tablet landscape
-*/
-@media only screen and (min-width:768px) and (max-width:1024px) {
-}
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* HEADER *//*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* end of HEADER *//*////////////////////////////////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
-/*
-* Tablet portret and smartphone
-*/
-@media only screen and (max-width:767px) {
-}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* FOOTER *//*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* end of FOOTER *//*/////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    
+        
+
+
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* MEDIA QUERIES *//*/////////////////////////////////////////////////////////////////////////////////////////////*/
+
+    @import 'media_queries';
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* PRINT *//*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+    @import 'print';
