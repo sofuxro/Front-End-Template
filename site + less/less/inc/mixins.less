@@ -1,0 +1,135 @@
+/*
+*
+*   Whenever you want to activate/deactivate
+*   a prefix based property, please check www.caniuse.com
+*
+*   Work performed by Claudiu Limban
+*   on September 2013
+*
+*/
+
+
+
+.clearfix() {
+    &:before, &:after { content:" "; display:table; }
+    &:after { clear:both; }
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.transition(@arg) {
+    // -moz-transition:@arg;
+    //   -o-transition:@arg;
+    -webkit-transition:@arg;
+            transition:@arg;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.transition-delay(@arg) {
+    // -moz-transition-delay:@arg;
+    //   -o-transition-delay:@arg;
+    -webkit-transition-delay:@arg;
+            transition-delay:@arg;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.appearance(@arg) {
+      -moz-appearance:@arg;
+    webkit-appearance:@arg;
+           appearance:@arg;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.transform(@arg) {
+       -moz-transform:@arg;
+    -webkit-transform:@arg;
+        -ms-transform:@arg;
+            transform:@arg;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.user_select(@arg) {
+    -webkit-touch-callout:@arg;
+    -webkit-user-select:  @arg;
+       -moz-user-select:  @arg;
+        -ms-user-select:  @arg;
+            user-select:  @arg;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.opacity(@arg) {
+    @filter_arg: @arg * 100;
+    filter:~"alpha(opacity=@{filter_arg})";
+    opacity:@arg;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.display_flex() {
+    /* OLD - 2009 */
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:-moz-box;
+    display:box;
+
+    /* NEW - Sept 2012 */
+    display:-webkit-flex;
+    display:flex;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.flex(@grow) {
+    -webkit-box-flex:@grow;
+       -moz-box-flex:@grow;
+            -ms-flex:@grow;
+            box-flex:@grow;
+        -webkit-flex:@grow 1 auto;
+                flex:@grow 1 auto;
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*      The EXTRA                                                                    */
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+.arrow-helper(@width1, @color1, @width2, @color2) { position:relative;
+    &:after, &:before { content:' '; width:0; height:0; position:absolute; border:solid transparent; pointer-events:none; }
+    &:before { border-width:(@width1 / 2 + @width2); }
+    &:after  { border-width:(@width1 / 2); }
+}
+
+.arrow-top(@width1, @color1, @width2 : 0, @color2 : #FFF) { .arrow-helper(@width1, @color1, @width2, @color2);
+    &:after, &:before { bottom:100%; }
+    &:before { left:50%; border-color:transparent transparent @color2; margin-left:-(@width1 / 2 + @width2); }
+    &:after { left:50%; border-color:transparent transparent @color1; margin-left:-(@width1 / 2); }
+}
+
+.arrow-right(@width1, @color1, @width2 : 0, @color2 : #FFF) { .arrow-helper(@width1, @color1, @width2, @color2);
+    &:after, &:before { left:100%; }
+    &:before { top:50%; border-color:transparent transparent transparent @color2; margin-top:-(@width1 / 2 + @width2); }
+    &:after  { top:50%; border-color:transparent transparent transparent @color1; margin-top:-(@width1 / 2); }
+}
+
+.arrow-bottom(@width1, @color1, @width2 : 0, @color2 : #FFF) { .arrow-helper(@width1, @color1, @width2, @color2);
+    &:after, &:before { top:100%; }
+    &:before { left:50%; border-color:@color2 transparent transparent transparent; margin-left:-(@width1 / 2 + @width2); }
+    &:after  { left:50%; border-color:@color1 transparent transparent transparent; margin-left:-(@width1 / 2); }
+}
+
+.arrow-left(@width1, @color1, @width2 : 0, @color2 : #FFF) { .arrow-helper(@width1, @color1, @width2, @color2);
+    &:after, &:before { right:100%; }
+    &:before { top:50%; border-color:transparent @color2 transparent transparent; margin-top:-(@width1 / 2 + @width2); }
+    &:after  { top:50%; border-color:transparent @color1 transparent transparent; margin-top:-(@width1 / 2); }
+}
+
+/*-----------------------------------------------------------------------------------*/
+

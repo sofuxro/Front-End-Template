@@ -1,3 +1,12 @@
+/*!################################
+  #                              #
+  #      by Claudiu Limban       #
+  #  http://sofuxro.elance.com   #
+  #                              #
+  ################################*/
+
+'use strict';
+
 (function( $ ){ /*http://docs.jquery.com/Plugins/Authoring*/
     var methods = {
         myMet: function(color1, color2) { /*body */}

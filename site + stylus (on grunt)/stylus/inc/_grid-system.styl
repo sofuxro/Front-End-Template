@@ -1,0 +1,50 @@
+/*
+ *
+ * Inspired from (the working - opposed to the 3rd version) bootstrap 2.3.2 grid system
+ *
+*/
+
+.row { width:100%; clearfix();
+
+    [class*="col-"] { display:block; float:left; width:100%; min-height:30px; margin-left:2.564102564102564%; }
+    [class*="col-"]:first-child { margin-left:0; }
+    .controls-row [class*="col-"] + [class*="col-"] { margin-left:2.564102564102564%; }
+
+    .col-12 { width:100%; }
+    .col-11 { width:91.45299145299145%;  }
+    .col-10 { width:82.90598290598291%;  }
+    .col-9  { width:74.35897435897436%;  }
+    .col-8  { width:65.81196581196582%;  }
+    .col-7  { width:57.26495726495726%;  }
+    .col-6  { width:48.717948717948715%; }
+    .col-5  { width:40.17094017094017%;  }
+    .col-4  { width:31.623931623931625%; }
+    .col-3  { width:23.076923076923077%; }
+    .col-2  { width:14.52991452991453%;  }
+    .col-1  { width:5.982905982905983%;  }
+
+    .col-offset-12             { margin-left:105.12820512820512%; }
+    .col-offset-12:first-child { margin-left:102.56410256410257%; }
+    .col-offset-11             { margin-left:96.58119658119658%;  }
+    .col-offset-11:first-child { margin-left:94.01709401709402%;  }
+    .col-offset-10             { margin-left:88.03418803418803%;  }
+    .col-offset-10:first-child { margin-left:85.47008547008548%;  }
+    .col-offset-9              { margin-left:79.48717948717949%;  }
+    .col-offset-9:first-child  { margin-left:76.92307692307693%;  }
+    .col-offset-8              { margin-left:70.94017094017094%;  }
+    .col-offset-8:first-child  { margin-left:68.37606837606839%;  }
+    .col-offset-7              { margin-left:62.393162393162385%; }
+    .col-offset-7:first-child  { margin-left:59.82905982905982%;  }
+    .col-offset-6              { margin-left:53.84615384615384%;  }
+    .col-offset-6:first-child  { margin-left:51.28205128205128%;  }
+    .col-offset-5              { margin-left:45.299145299145295%; }
+    .col-offset-5:first-child  { margin-left:42.73504273504273%;  }
+    .col-offset-4              { margin-left:36.75213675213675%;  }
+    .col-offset-4:first-child  { margin-left:34.18803418803419%;  }
+    .col-offset-3              { margin-left:28.205128205128204%; }
+    .col-offset-3:first-child  { margin-left:25.641025641025642%; }
+    .col-offset-2              { margin-left:19.65811965811966%;  }
+    .col-offset-2:first-child  { margin-left:17.094017094017094%; }
+    .col-offset-1              { margin-left:11.11111111111111%;  }
+    .col-offset-1:first-child  { margin-left:8.547008547008547%;  }
+}
