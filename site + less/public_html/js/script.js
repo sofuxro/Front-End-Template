@@ -1,24 +1,23 @@
-/*!################################
-  #                              #
-  #      by Claudiu Limban       #
-  #  http://sofuxro.elance.com   #
-  #                              #
-  ################################*/
+/*!#############################
+#                              #
+#      by Claudiu Limban       #
+#  http://sofuxro.elance.com   #
+#                              #
+################################*/
+
 
 'use strict';
 
-(function( $ ){ /*http://docs.jquery.com/Plugins/Authoring*/
-    var methods = {
-        myMet: function(color1, color2) { /*body */}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var add_extra_styles = function(url) {
+        var link_css = document.createElement("link");
+
+        link_css.setAttribute("rel", "stylesheet");
+        link_css.setAttribute("href", url);
+        document.getElementsByTagName("head")[0].appendChild(link_css);
     };
 
-    $.fn.myFunc = function( method ) { if ( methods[method] ) { return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 )); } else if ( typeof method === 'object' || ! method ) { return methods.init.apply( this, arguments ); } else { $.error( 'Method ' +  method + ' does not exist on jQuery.tooltip' ); } };
-
-})( jQuery );   /* $('.main').myFunc('myMet', '#aaa', '#bbb'); */
-
-
-$(function() {
-
-    $.getScript('any_additional.js'); //http://api.jquery.com/jQuery.getScript/
-
+    /* EXAMPLE
+    add_extra_style('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'); */
 });
