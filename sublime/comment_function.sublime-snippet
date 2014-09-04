@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+/**
+* ${1:Function name}
+ *
+ * ### Examples:
+ *
+ *     ${2:utils.escape('<script></script>')}
+ *
+ * @param {${3:String}} ${4:html string to be escaped}
+ * @return {${5:String}} ${6:escaped html}
+ */${0}]]>
+</content>
+    <tabTrigger>comm1</tabTrigger>
+    <description>Function / Method commet</description>
+</snippet>

@@ -1,0 +1,7 @@
+TrailingSpaces  - remove unnecessary white space
+LiveReload
+Less            - format recognition
+Emmet           - formal Zend Coding
+Alignment       - alignes '=' (especially good for long var declarations)
+                - "ctrl+alt+a"
+AdvancedNewFile - creation of new files

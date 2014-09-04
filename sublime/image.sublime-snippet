@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+<img src="${1:#}" alt="${2:Keywords for this}" />${0}
+]]></content>
+    <tabTrigger>img</tabTrigger>
+<!--    <scope>source.js</scope>-->
+    <description><img src="#" alt="Keywords for this" /></description>
+</snippet>
