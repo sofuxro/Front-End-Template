@@ -1,0 +1,47 @@
+/* =============================================================================
+* Security & Optimization
+*/
+
+* GlassWire
+* CCleaner
+* KeePass
+* Esset NOD32 Security 7
+
+
+/* =============================================================================
+* Web Development
+*/
+
+* Adobe Photoshop, Illustrator & LightRoom
+* WinLess
+* SublimeText 3 (add key)
+* Dropbox
+
+* SourceTree (Optional GitHub GUI)
+    Merge Conflicts
+        http://kdiff3.sourceforge.net/
+        http://meldmerge.org/
+* (Optional) TortoiseGit
+* (Optional) TortoiseSVN
+
+* (Optional) VirtualBox
+* (Optional) WAMP
+* (Optional) Tracker (from elance)
+
+
+
+/* =============================================================================
+* Miscellaneous
+*/
+
+* FoxitRedear
+* Peazip
+* Skype
+* Winamp
+* KMPlayer
+* Putty (add putty_session_bkp.reg)
+
+* PhotomatixPro4
+* Thunderbird
+
+
