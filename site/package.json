@@ -7,6 +7,7 @@
     "url": "https://github.com/sofuxro/Front-End-Template.git"
   },
   "devDependencies": {
+    "browserify": "^5.11.2",
     "gulp": "^3.8.8",
     "gulp-changed": "^1.0.0",
     "gulp-clean": "^0.3.1",
