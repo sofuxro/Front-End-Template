@@ -2,7 +2,7 @@
 * DEPENDENCIES
  ************************************************************************/
 
-var config      = require('./config.js'),        // getting the configuration (like: img.src, js.dest, etc)
+var config      = require('./config.js'),          // getting the configuration (like: img.src, js.dest, etc)
     browserify   = require('browserify'),          // Organize your browser code and load modules installed by npm
     gulp         = require('gulp'),                // Gulp core
     gutil        = require('gulp-util'),           // The gulp utility plugin

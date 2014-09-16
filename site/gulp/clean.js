@@ -4,7 +4,8 @@
 
 var config      = require('./config.js'),        // getting the configuration (like: img.src, js.dest, etc)
     gulp        = require('gulp'),               // Gulp core
-    clean       = require('gulp-clean');         // Removes files and folders
+    clean       = require('gulp-rimraf'),        // Removes files and folders
+    gutil       = require('gulp-util');          // The gulp utility plugin
 
 
 
@@ -16,13 +17,19 @@ var config      = require('./config.js'),        // getting the configuration (l
  ************************************************************************/
 
 gulp.task('img-clean', function() {
-    return gulp.src(config.img.dest, {read: false})
-        .pipe(clean());
+    // !!! ONLY IF in PRODUCTION
+    if(gutil.env.production === true) {
+        return gulp.src(config.img.dest, {read: false})
+            .pipe(clean());
+    }
 });
 
 gulp.task('less-clean', function() {
-    return gulp.src(config.less.dest, {read: false})
-        .pipe(clean());
+    // !!! ONLY IF in PRODUCTION
+    if(gutil.env.production === true) {
+        return gulp.src(config.less.dest, {read: false})
+            .pipe(clean());
+    }
 });
 
 // in the current configuration (using modules with broserify) we don't add new files or delete ones
@@ -31,6 +38,9 @@ gulp.task('less-clean', function() {
 //gulp.task('js-clean', function() {});
 
 gulp.task('html-clean', function() {
-    return gulp.src(config.less.dest, {read: false})
-        .pipe(clean());
+    // !!! ONLY IF in PRODUCTION
+    if(gutil.env.production === true) {
+        return gulp.src(config.html.dest + '*.html', {read: false})
+            .pipe(clean());
+    }
 });

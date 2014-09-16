@@ -17,8 +17,9 @@
 * DEPENDENCIES
  ************************************************************************/
 
-var config      = require('./gulp/config.js'),        // getting the configuration (like: img.src, js.dest, etc)
+var config      = require('./gulp/config.js'),   // getting the configuration (like: img.src, js.dest, etc)
     gulp        = require('gulp'),               // Gulp core
+    gutil       = require('gulp-util'),          // The gulp utility plugin
     require_dir = require('require-dir');        // Node helper to require() directories.
 
 
@@ -40,10 +41,13 @@ require_dir('./gulp/', { recurse: true });
  *
  * PRODUCTION  (when running 'gulp --production') giving gutil.env.production TRUE
  */
-//gulp.task('default', ['less', 'img', 'html']);
 gulp.task('default', ['less', 'img', 'js', 'html'], function() {
-    gulp.watch(config.less.src, ['less']);
-    gulp.watch(config.img.src,  ['img']);
-    //gulp.watch(config.js.src,   ['js']); // we don't need this because js uses watchify + browserfy
-    gulp.watch(config.img.src,  ['img']);
+    // we only start watching in DEVELOPMENT mode;
+    // in production we just make the final preparation for the shipping of the files
+    if(gutil.env.production !== true) {
+        gulp.watch(config.less.src, ['less']);
+        gulp.watch(config.img.src,  ['img']);
+        //gulp.watch(config.js.src,   ['js']); // we don't need this because js uses watchify + browserfy
+        gulp.watch(config.html.src,  ['html']);
+    }
 });
