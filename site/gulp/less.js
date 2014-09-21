@@ -30,6 +30,9 @@ gulp.task('less', ['less-clean'], function() {
         // less compiling
         .pipe(less())
 
+        // on a less error this will catch it and it won't stop the watch (as would normaly happen)
+        .on('error', gutil.log)
+
         // end of the source map !!! ONLY IF in DEVELOPMENT else nothing
         .pipe((gutil.env.production !== true) ? sourcemaps.write() : gutil.noop())
 

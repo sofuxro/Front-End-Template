@@ -45,6 +45,7 @@ gulp.task('default', ['less', 'img', 'js', 'html'], function() {
     // we only start watching in DEVELOPMENT mode;
     // in production we just make the final preparation for the shipping of the files
     if(gutil.env.production !== true) {
+        // we watch all the less files, but we only process the main files: style.less
         gulp.watch(config.less.watch, ['less']);
         gulp.watch(config.img.src,  ['img']);
         //gulp.watch(config.js.src,   ['js']); // we don't need this because js uses watchify + browserfy
