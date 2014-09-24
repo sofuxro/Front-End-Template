@@ -30,6 +30,9 @@ var config      = require('./config.js'),        // getting the configuration (l
         // validating against w3c html validator
         .pipe(w3cjs())
 
+        // on a less error this will catch it and it won't stop the watch (as would normaly happen)
+        .on('error', gutil.log)
+
         // the final destination folder
         .pipe(gulp.dest(config.html.dest));
 });
