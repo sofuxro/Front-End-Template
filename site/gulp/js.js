@@ -27,7 +27,7 @@ gulp.task('js', function() {
         bundler = browserify({
             // required watchify args
             cache: {}, packageCache: {}, fullPaths: true,
-            // Soecify the entry point of your app
+            // Specify the entry point of your app
             entries: [config.js.src],
             // enable source map !!! ONLY IF in DEVELOPMENT
             debug: (if_production !== true)
