@@ -20,7 +20,7 @@ gulp.task('img-clean', function() {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
         return gulp.src(config.img.dest, {read: false})
-            .pipe(clean());
+            .pipe(clean({force: true}));
     }
 });
 
@@ -28,7 +28,7 @@ gulp.task('less-clean', function() {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
         return gulp.src(config.less.dest, {read: false})
-            .pipe(clean());
+            .pipe(clean({force: true}));
     }
 });
 
