@@ -47,8 +47,14 @@ gulp.task('default', ['less', 'img', 'js', 'html'], function() {
     if(gutil.env.production !== true) {
         // we watch all the less files, but we only process the main files: style.less
         gulp.watch(config.less.watch, ['less']);
+
         gulp.watch(config.img.src,  ['img']);
+
         //gulp.watch(config.js.src,   ['js']); // we don't need this because js uses watchify + browserfy
+
         gulp.watch(config.html.src,  ['html']);
+
+        // html templates used in javascript
+        gulp.watch(config.html.jst_src,  ['jst']);
     }
 });

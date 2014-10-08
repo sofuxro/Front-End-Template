@@ -40,5 +40,20 @@ module.exports = {
         link_css.setAttribute("rel", "stylesheet");
         link_css.setAttribute("href", url);
         document.getElementsByTagName("head")[0].appendChild(link_css);
+    },
+
+    /**
+    * Looping through DOM NodeList
+     *
+     * ### Examples:
+     *
+     *  forEach(document.querySelectorAll('li'), function (index, value) { console.log(index, value); });
+     *
+     * @param {Array, Function, Scope}
+     */
+    forEach: function (array, callback, scope) {
+        for (var i = 0, len = array.length; i < len; i++) {
+            callback.call(scope, i, array[i]);
+        }
     }
 };

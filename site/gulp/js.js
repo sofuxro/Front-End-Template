@@ -15,11 +15,9 @@ var config      = require('./config.js'),          // getting the configuration 
 
 /*************************************************************************
 * The actual compilation process
- *
- * @dependencies - it waits until clean its done removing the old files
  ************************************************************************/
 
-gulp.task('js', function() {
+gulp.task('js', ['jst'], function() {
         // boolean variable (from "gulp --production" which will provide true)
     var if_production = gutil.env.production,
 

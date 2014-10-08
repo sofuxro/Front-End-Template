@@ -3,8 +3,8 @@
  ************************************************************************/
 
 var config      = require('./config.js'),        // getting the configuration (like: img.src, js.dest, etc)
+    del         = require('del'),                // Removes files and folders - if you want to delete outised files use clean({force: true})
     gulp        = require('gulp'),               // Gulp core
-    clean       = require('gulp-rimraf'),        // Removes files and folders
     gutil       = require('gulp-util');          // The gulp utility plugin
 
 
@@ -19,28 +19,28 @@ var config      = require('./config.js'),        // getting the configuration (l
 gulp.task('img-clean', function() {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
-        return gulp.src(config.img.dest, {read: false})
-            .pipe(clean());
+        // we use return to make the task synchronous
+        return del([config.img.dest], {force: true});
     }
 });
 
 gulp.task('less-clean', function() {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
-        return gulp.src(config.less.dest, {read: false})
-            .pipe(clean());
+        // we use return to make the task synchronous
+        return del([config.less.dest], {force: true});
     }
 });
 
 // in the current configuration (using modules with broserify) we don't add new files or delete ones
 // without this manifesting inside the app.js so caught on save.
 // therefore we don't need to clean the folder as there will only be one and just one file script.js
-//gulp.task('js-clean', function() {});
+// gulp.task('js-clean', function() {});
 
 gulp.task('html-clean', function() {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
-        return gulp.src(config.html.dest + '*.html', {read: false})
-            .pipe(clean());
+        // we use return to make the task synchronous
+        return del([config.html.dest + '*.html'], {force: true});
     }
 });
