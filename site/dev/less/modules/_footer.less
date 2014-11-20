@@ -10,8 +10,7 @@
             &:nth-child(even) { background-color:#EAEAEA; }
             &.copy { font-size:12px;
                 p { line-height:25px; }
-                p:nth-child(1) { float:left; }
-                p:nth-child(2) { float:right;
+                div:nth-child(2) p { text-align:right;
                     i { width:35px; height:25px; background-image:url('../img/romania.png'); margin:0 4px; -webkit-filter:grayscale(100%); filter:grayscale(100%); vertical-align:middle; display:inline-block; }
                     &:hover i { -webkit-filter:grayscale(0%); filter:grayscale(0%); }
                 }
@@ -36,7 +35,7 @@
             .social { float:none; text-align:center;
                 a { margin:0 5px; padding:5px 10px; font-size:30px; }
             }
-            section.copy p:nth-child(1), section.copy p:nth-child(2) { float:none; text-align:center; }
+            section.copy p, section.copy div:nth-child(2) p { text-align:center; }
         }
     }
 

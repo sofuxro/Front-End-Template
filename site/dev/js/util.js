@@ -47,7 +47,7 @@ module.exports = {
      *
      * ### Examples:
      *
-     *  forEach(document.querySelectorAll('li'), function (index, value) { console.log(index, value); });
+     *  utils.forEach(document.querySelectorAll('li'), function (index, element) { console.log(index, element); });
      *
      * @param {Array, Function, Scope}
      */

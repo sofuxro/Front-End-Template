@@ -1,0 +1,5 @@
+/* Update from time to time the entire build */
+
+1. remove the entire node_module
+2. install each module again (the latest)
+3. check to see that everything is working properly

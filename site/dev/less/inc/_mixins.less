@@ -61,37 +61,19 @@
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* Box shadow based on google material design
 
-.opacity(@arg) {
-    @filter_arg: @arg * 100;
-    filter:~"alpha(opacity=@{filter_arg})";
-    opacity:@arg;
-}
+ * url: https://www.google.com/design/spec/layout/layout-principles.html
+ * image: https://material-design.storage.googleapis.com/images/layout-principles-dimensionality-shadows-01_large_xhdpi.png
+ * values: https://material-design.storage.googleapis.com/images/layout-principles-dimensionality-shadows-08_large_xhdpi.png
+ */
 
-/*-----------------------------------------------------------------------------------*/
+.box_shadow_level_1() { box-shadow:0px 1px 4px rgba(0, 0, 0 , 0.40); }
+.box_shadow_level_2() { box-shadow:0px 3px 9px rgba(0, 0, 0 , 0.40); }
+.box_shadow_level_3() { box-shadow:0px 5px 14px rgba(0, 0, 0 , 0.40); }
+.box_shadow_level_4() { box-shadow:0px 7px 23px rgba(0, 0, 0 , 0.40); }
+.box_shadow_level_5() { box-shadow:0px 10px 32px rgba(0, 0, 0 , 0.44); }
 
-.display_flex() {
-    /* OLD - 2009 */
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:-moz-box;
-    display:box;
-
-    /* NEW - Sept 2012 */
-    display:-webkit-flex;
-    display:flex;
-}
-
-/*-----------------------------------------------------------------------------------*/
-
-.flex(@grow) {
-    -webkit-box-flex:@grow;
-       -moz-box-flex:@grow;
-            -ms-flex:@grow;
-            box-flex:@grow;
-        -webkit-flex:@grow 1 auto;
-                flex:@grow 1 auto;
-}
 
 
 

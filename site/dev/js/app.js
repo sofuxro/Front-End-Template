@@ -31,19 +31,22 @@ document.addEventListener("DOMContentLoaded", function() {
     * Menu showing / hidding on small screens (<768px) - in addition with the css
      * and a standard html structure (nav > button + a*n)
      */
-    document.querySelector('[data-role="main_menu"] button').addEventListener('click', function(e) {
-        this.parentNode.classList.toggle('active');
-        e.preventDefault();
-    });
+    if(ocument.querySelector('[data-role="main_menu"] button')) {
+        document.querySelector('[data-role="main_menu"] button').addEventListener('click', function(e) {
+            this.parentNode.classList.toggle('active');
+            e.preventDefault();
+        });
+    }
 
 
     /**
     * Go up (from the footer)
      */
-
-    document.querySelector('footer [data-role="go_up"]').addEventListener('click', function(e) {
-        $('html, body').animate({'scrollTop': '0px'}, 500);
-        e.preventDefault();
-    });
+    if(document.querySelector('footer [data-role="go_up"]')) {
+        document.querySelector('footer [data-role="go_up"]').addEventListener('click', function(e) {
+            $('html, body').animate({'scrollTop': '0px'}, 500);
+            e.preventDefault();
+        });
+    }
 
 });

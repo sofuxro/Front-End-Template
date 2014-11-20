@@ -20,7 +20,7 @@ gulp.task('img-clean', function() {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
         // we use return to make the task synchronous
-        return del([config.img.dest], {force: true});
+        return del([config.img.clean_dest], {force: true});
     }
 });
 
