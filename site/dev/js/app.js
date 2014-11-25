@@ -1,9 +1,9 @@
-/*!#############################
-#                              #
-#      by Claudiu Limban       #
-#  http://sofuxro.elance.com   #
-#                              #
-################################*/
+/*!###############################
+#                                #
+#      by Claudiu Limban         #
+# http://www.teranacreative.com  #
+#                                #
+##################################*/
 
 
 'use strict';
