@@ -17,8 +17,8 @@ module.exports = {
     },
 
     js: {
-        name:       'script.js',          // name of the destination bundled js file
-        src:        './dev/js/app.js',
+        src:        ['./dev/js/app.js'], // list of sources     app.js,    admin.js
+        names:      ['script.js'],       // list of final names script.js, admin.js
         dest:       public_html + 'js/'
     },
 

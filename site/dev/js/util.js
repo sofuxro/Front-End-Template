@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-
     /**
     * Getting the offset of a DOM element
      *
@@ -25,6 +24,7 @@ module.exports = {
         return { top: top, left: left };
     },
 
+
     /**
     * Adding dynamically a new external style into the html
      *
@@ -42,6 +42,7 @@ module.exports = {
         document.getElementsByTagName("head")[0].appendChild(link_css);
     },
 
+
     /**
     * Looping through DOM NodeList
      *
@@ -55,5 +56,65 @@ module.exports = {
         for (var i = 0, len = array.length; i < len; i++) {
             callback.call(scope, i, array[i]);
         }
+    },
+
+
+    /**
+    * AJAX
+     *
+     * ### Examples:
+     *
+     *      utils.ajax.get({
+     *          url:     '/test.php',
+     *          data:    {foo: 'bar'},
+     *          success: function() { // what to do on success; },
+     *          error:   function() { // what to do on error; }
+     *      });
+     */
+    ajax: function() {
+        var http_req = new XMLHttpRequest(),
+            get_fn   = null,
+            post_fn  = null,
+            send_fn  = null;
+
+        send_fn = function(url, data, method, success_fn, error_fn, sync) {
+            var x = http_req;
+            x.open(method, url, sync);
+            x.onreadystatechange = function() {
+                if (x.readyState == 4) {
+                    if(x.status === 200) {
+                        success_fn(x.responseText)
+                    } else {
+                        error_fn();
+                    }
+                }
+            };
+            if(method === 'POST') {
+                x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            }
+            x.send(data);
+        };
+
+        get_fn = function(obj) {
+            var query = [];
+
+            for(var key in obj.data) {
+                query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
+            }
+            //              url              data  method    success_fn     error_fn        sync
+            send_fn(obj.url + '?' + query.join('&'), null, 'GET', obj.success, obj.error, obj.sync);
+        };
+
+        post_fn = function(obj) {
+            var query = [];
+
+            for(var key in obj.data) {
+                query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
+            }
+            //    url         data         method    success_fn     error_fn        sync
+            send_fn(obj.url, query.join('&'), 'POST', obj.success, obj.error, obj.sync);
+        };
+
+        return {get: get_fn, post: post_fn};
     }
 };

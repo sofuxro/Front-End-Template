@@ -24,18 +24,23 @@ gulp.task('img-clean', function() {
     }
 });
 
-gulp.task('less-clean', function() {
+
+gulp.task('less-clean', function(cb) {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
-        // we use return to make the task synchronous
-        return del([config.less.dest], {force: true});
+        // we use CallBack to make the task synchronous
+        del([config.less.dest], {force: true}, cb);
+    } else {
+        cb();
     }
 });
+
 
 // in the current configuration (using modules with broserify) we don't add new files or delete ones
 // without this manifesting inside the app.js so caught on save.
 // therefore we don't need to clean the folder as there will only be one and just one file script.js
 // gulp.task('js-clean', function() {});
+
 
 gulp.task('html-clean', function() {
     // !!! ONLY IF in PRODUCTION
