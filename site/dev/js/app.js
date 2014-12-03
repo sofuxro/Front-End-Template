@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     * Menu showing / hidding on small screens (<768px) - in addition with the css
      * and a standard html structure (nav > button + a*n)
      */
-    if(ocument.querySelector('[data-role="main_menu"] button')) {
+    if(document.querySelector('[data-role="main_menu"] button')) {
         document.querySelector('[data-role="main_menu"] button').addEventListener('click', function(e) {
             this.parentNode.classList.toggle('active');
             e.preventDefault();
