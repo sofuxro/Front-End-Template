@@ -70,7 +70,7 @@ gulp.task('default', ['less', 'img', 'js', 'html'], function() {
 
         gulp.watch(config.img.src,       ['img']);
 
-        gulp.watch(config.js.src,        ['js']);
+        gulp.watch(config.js.watch,        ['js']);
 
         gulp.watch(config.html.src,      ['html']);
 

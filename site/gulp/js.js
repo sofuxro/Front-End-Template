@@ -24,7 +24,7 @@ gulp.task('js', ['jst'], function() {
         bundler = function(src) {
             return browserify({
                 // required watchify args
-                cache: {}, packageCache: {}, fullPaths: true,
+                cache: {}, packageCache: {},
                 // Specify the entry point of your app
                 //entries: [config.js.files[0].src],
                 entries: [src],

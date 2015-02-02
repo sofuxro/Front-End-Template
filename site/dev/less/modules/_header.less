@@ -54,12 +54,17 @@ body > header { width:100%; background-color:transparent; position:fixed; top:0;
 */
 @media only screen and (max-width:767px) {
     body > header nav { padding:39px 0 0;
-        &.active a { display:block;
-            &:hover { background-color:#DDD; color:@main_color; }
+        &.active a, &.active .dropdown, &.active .dropdown > button { display:block;
+            &:hover { background-color:#DDD; color:@blue_1; }
         }
-        a { background-color:#EFEFEF; padding:15px 1%; color:#333; font-size:16px; font-weight:600; text-align:center; display:none; }
-        button { height:40px; display:block;
+        a, .dropdown > button { width:100%; background-color:#EFEFEF; padding:15px 1%; color:#333; font-size:16px; font-family:'Open sans', Helvetica, Arial, sans-serif; font-weight:600; text-align:center; display:none; }
+        & > button { height:40px; display:block;
             span { background-color:gray; }
+        }
+        .dropdown { padding:0;
+            button { text-align:center; }
+            ul { width:100%; }
+            a { padding:5px 5%; font-size:14px; text-transform:uppercase; }
         }
     }
 }

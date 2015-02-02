@@ -17,9 +17,11 @@ module.exports = {
     },
 
     js: {
+        // the dot    V                     is mandatory (as the current folder) for browserify
         src:        ['./dev/js/app.js'], // list of sources     app.js,    admin.js
         names:      ['script.js'],       // list of final names script.js, admin.js
-        dest:       public_html + 'js/'
+        dest:       public_html + 'js/',
+        watch:      'dev/js/**/*.js'
     },
 
     html: {

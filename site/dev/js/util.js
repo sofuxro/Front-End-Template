@@ -6,7 +6,7 @@ module.exports = {
      *
      * ### Examples:
      *
-     *     util.offset(document.querySelector('.my_element'));
+     *     utils.offset(document.querySelector('.my_element'));
      *
      * @param {Object} dom element (not jquery element)
      * @return {Object} a top / left object
@@ -30,7 +30,7 @@ module.exports = {
      *
      * ### Examples:
      *
-     *     util.extra_style('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+     *     utils.extra_style('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
      *
      * @param {String} the actual url (local or http)
      */
@@ -70,6 +70,11 @@ module.exports = {
      *          success: function() { // what to do on success; },
      *          error:   function() { // what to do on error; }
      *      });
+     *
+     * TODO
+     *      DELETE and UPDATE (methods)
+     *      send TYPE
+     *      return TYPE
      */
     ajax: function() {
         var http_req = new XMLHttpRequest(),
@@ -116,5 +121,48 @@ module.exports = {
         };
 
         return {get: get_fn, post: post_fn};
+    },
+
+
+    /**
+    * Escapes html characters
+     *
+     * ### Examples:
+     *
+     *     utils.escapeHtml('This is my string ' " > < will be removed');
+     *
+     * @param  {String} html string to be escaped
+     * @return {String} escaped html
+     */
+    escapeHtml: function(text) {
+        var map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#x27;',
+            "/": '&#x2F;'
+        };
+
+        return text.replace(/[&<>"'/]/g, function(m) { return map[m]; });
+    },
+
+
+    /**
+    * urlencode equivalent from PHP
+     *
+     * @param  {String} - string to be encoded
+     * @return {String} - the encoded string
+     */
+    urlencode : function(string) {
+        string = (string + '').toString();
+
+        return encodeURI(string)
+            .replace(/!/g,   '%21')
+            .replace(/'/g,   '%27')
+            .replace(/\(/g,  '%28')
+            .replace(/\)/g,  '%29')
+            .replace(/\*/g,  '%2A')
+            .replace(/%20/g, '+');
     }
 };

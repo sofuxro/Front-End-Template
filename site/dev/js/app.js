@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
     /**
     * Adding Font Awesome and most used google font Open Sans
      */
-    util.extra_style('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
-    util.extra_style('http://fonts.googleapis.com/css?family=Open+Sans');
+    util.extra_style('http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+    util.extra_style('http://fonts.googleapis.com/css?family=Open+Sans&subset=latin-ext');
 
 
     /**
