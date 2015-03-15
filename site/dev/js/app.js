@@ -12,7 +12,8 @@
 /**
 * A utility object helping with vanilla javascript (trying to mimic jQuery)
  */
-var util = require('./util.js');
+var utils  = require('./inc/utils.js'),
+    header = require('./inc/header.js');
 
 
 /** =======================================================================================
@@ -21,21 +22,28 @@ var util = require('./util.js');
 document.addEventListener("DOMContentLoaded", function() {
 
     /**
-    * Adding Font Awesome and most used google font Open Sans
+    * Header functionality
      */
-    util.extra_style('http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-    util.extra_style('http://fonts.googleapis.com/css?family=Open+Sans&subset=latin-ext');
+    header();
 
 
     /**
-    * Menu showing / hidding on small screens (<768px) - in addition with the css
-     * and a standard html structure (nav > button + a*n)
+    * Scroll functionality
+     *
+     * Controlling:
+     *      - menu by adding active when we scroll (give a semi-transparent background color)
+     *      - paralax effect on the body background-image
      */
-    if(document.querySelector('[data-role="main_menu"] button')) {
-        document.querySelector('[data-role="main_menu"] button').addEventListener('click', function(e) {
-            this.parentNode.classList.toggle('active');
-            e.preventDefault();
-        });
+    window.onscroll = function (event) {
+        /* HEADER control (transparent / gray background) */
+        if((document.documentElement.scrollTop || document.body.scrollTop) > 100) {
+            document.body.querySelector('body > header').classList.add('active');
+        } else {
+            document.body.querySelector('body > header').classList.remove('active');
+        }
+
+        /* PARALAX effect */
+        document.body.style.backgroundPosition = '0px ' + window.pageYOffset / 3 + 'px';
     }
 
 

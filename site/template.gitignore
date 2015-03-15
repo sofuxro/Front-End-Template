@@ -1,0 +1,10 @@
+.DS_Store
+*.md
+.sass-cache
+build
+Desktop.ini
+node_modules
+*.htaccess
+/public_html/images/
+sitemap.xml
+config.php

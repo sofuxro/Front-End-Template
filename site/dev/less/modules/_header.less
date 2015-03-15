@@ -1,73 +1,101 @@
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* HEADER *//*///////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-/* from http://bouncejs.com/ */
-@keyframes on_hover {
-    0%   { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    5%   { transform: matrix3d(1.08935, 0, 0, 0, 0, 1.11961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    10%  { transform: matrix3d(1.1711, 0, 0, 0, 0, 1.2289, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    15%  { transform: matrix3d(1.21977, 0, 0, 0, 0, 1.26083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    20%  { transform: matrix3d(1.23539, 0, 0, 0, 0, 1.23539, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    25%  { transform: matrix3d(1.22991, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    30%  { transform: matrix3d(1.21655, 0, 0, 0, 0, 1.18345, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    35%  { transform: matrix3d(1.20432, 0, 0, 0, 0, 1.1867, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    40%  { transform: matrix3d(1.19704, 0, 0, 0, 0, 1.19704, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    45%  { transform: matrix3d(1.19471, 0, 0, 0, 0, 1.20385, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    50%  { transform: matrix3d(1.19553, 0, 0, 0, 0, 1.20447, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    55%  { transform: matrix3d(1.19752, 0, 0, 0, 0, 1.2018, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    60%  { transform: matrix3d(1.19935, 0, 0, 0, 0, 1.19935, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    65%  { transform: matrix3d(1.20044, 0, 0, 0, 0, 1.19864, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    70%  { transform: matrix3d(1.20079, 0, 0, 0, 0, 1.19921, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    75%  { transform: matrix3d(1.20067, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    80%  { transform: matrix3d(1.20037, 0, 0, 0, 0, 1.20037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    85%  { transform: matrix3d(1.2001, 0, 0, 0, 0, 1.2003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    90%  { transform: matrix3d(1.19993, 0, 0, 0, 0, 1.20007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    95%  { transform: matrix3d(1.19988, 0, 0, 0, 0, 1.19991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    100% { transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-}
-
-
-
-body > header { width:100%; background-color:transparent; position:fixed; top:0; left:0; z-index:1; opacity:0.95; .transition(all 0.6s ease-out 0s);
-    .logo { position:absolute; top:10px; left:5%; text-indent:-8700px; line-height:0; z-index:1;
-        img { width:100%; height:auto; display:block; }
-        &:hover { -webkit-animation-delay:1s; -moz-animation-delay:1s; animation-delay:1s; animation:on_hover 1s linear both; }
+    /* from http://bouncejs.com/ */
+    @keyframes on_hover {
+        0%   { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        5%   { transform: matrix3d(1.08935, 0, 0, 0, 0, 1.11961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        10%  { transform: matrix3d(1.1711, 0, 0, 0, 0, 1.2289, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        15%  { transform: matrix3d(1.21977, 0, 0, 0, 0, 1.26083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        20%  { transform: matrix3d(1.23539, 0, 0, 0, 0, 1.23539, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        25%  { transform: matrix3d(1.22991, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        30%  { transform: matrix3d(1.21655, 0, 0, 0, 0, 1.18345, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        35%  { transform: matrix3d(1.20432, 0, 0, 0, 0, 1.1867, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        40%  { transform: matrix3d(1.19704, 0, 0, 0, 0, 1.19704, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        45%  { transform: matrix3d(1.19471, 0, 0, 0, 0, 1.20385, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        50%  { transform: matrix3d(1.19553, 0, 0, 0, 0, 1.20447, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        55%  { transform: matrix3d(1.19752, 0, 0, 0, 0, 1.2018, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        60%  { transform: matrix3d(1.19935, 0, 0, 0, 0, 1.19935, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        65%  { transform: matrix3d(1.20044, 0, 0, 0, 0, 1.19864, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        70%  { transform: matrix3d(1.20079, 0, 0, 0, 0, 1.19921, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        75%  { transform: matrix3d(1.20067, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        80%  { transform: matrix3d(1.20037, 0, 0, 0, 0, 1.20037, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        85%  { transform: matrix3d(1.2001, 0, 0, 0, 0, 1.2003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        90%  { transform: matrix3d(1.19993, 0, 0, 0, 0, 1.20007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        95%  { transform: matrix3d(1.19988, 0, 0, 0, 0, 1.19991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        100% { transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
     }
 
-    nav { height:100%; position:relative; padding:0 5% 0 0; text-align:right;
-        a { height:100%; padding:18px 1%; border-bottom:2px solid transparent; color:#333; font-size:14px; text-transform:uppercase; letter-spacing:1px; display:inline-block;
-            &:last-child { padding-right:0; }
-            &:hover { color:@main_color; border-bottom:2px solid @main_color; text-decoration:none; }
+
+
+    body > header { width:100%; background-color:transparent; position:fixed; top:0; left:0; z-index:1; opacity:0.95; transition:all 0.6s ease-out;
+        .logo { position:absolute; top:10px; left:5%; text-indent:-8700px; line-height:0; z-index:1;
+            img { width:100%; height:auto; display:block; }
+            &:hover { -webkit-animation-delay:1s; -moz-animation-delay:1s; animation-delay:1s; animation:on_hover 1s linear both; }
+            span { display:none; }
         }
-        button { width:100%; height:62px; position:absolute; top:0; left:0; display:none;
-            span { width:22px; height:2px; background-color:gray; float:right; margin-top:4px; margin-right:15px; border-radius:1px; clear:both; display:block; }
-            span:first-child { margin-top:0; }
-            &.active span, &:hover span { background-color:@main_color; }
+
+        nav { height:100%; position:relative; padding:0 5% 0 0; text-align:right;
+            a { height:100%; padding:18px 1%; border-bottom:2px solid transparent; color:#333; font-size:14px; text-transform:uppercase; letter-spacing:1px; display:inline-block;
+                &:hover { color:@main_color; border-bottom:2px solid @main_color; text-decoration:none; }
+            }
+            button { width:100%; height:62px; position:absolute; top:0; left:0; display:none;
+                span { width:22px; height:2px; background-color:gray; float:right; margin-top:4px; margin-right:15px; border-radius:1px; clear:both; display:block; }
+                span:first-child { margin-top:0; }
+                &.active span, &:hover span { background-color:@main_color; }
+            }
+        }
+
+        &.active { background-color:@color_gray_light_01; box-shadow:0 1px 3px #777;
+            nav a { color:@color_gray_dark_02;
+                &:hover { color:@main_color; }
+            }
+        }
+
+        /* search input */
+        .search_form { width:100%; position:absolute; top:52px; right:0; padding:0 1px 0 0; text-align:right; display:none; }
+        .search_form input[type="text"] { max-width:300px; height:30px; background-color:rgba(255, 255, 255, 0.6); border:0 none; border-radius:3px; color:#333; .box_shadow_level_1();
+            &:hover { .box_shadow_level_2(); }
         }
     }
-}
 
 
-
-/*
-    * Tablet portret and smartphone
-*/
-@media only screen and (max-width:767px) {
-    body > header nav { padding:39px 0 0;
-        &.active a, &.active .dropdown, &.active .dropdown > button { display:block;
-            &:hover { background-color:#DDD; color:@blue_1; }
-        }
-        a, .dropdown > button { width:100%; background-color:#EFEFEF; padding:15px 1%; color:#333; font-size:16px; font-family:'Open sans', Helvetica, Arial, sans-serif; font-weight:600; text-align:center; display:none; }
-        & > button { height:40px; display:block;
-            span { background-color:gray; }
-        }
-        .dropdown { padding:0;
-            button { text-align:center; }
-            ul { width:100%; }
-            a { padding:5px 5%; font-size:14px; text-transform:uppercase; }
+    .breadcrumb { margin-bottom:50px; padding:0 15px;
+        li { padding:0 10px 0 0; display:inline-block; }
+        a { position:relative; padding:8px 10px 8px 0; display:block;
+            &:after { content:'\f054'; position:absolute; top:10px; right:-6px; font-family:'FontAwesome'; font-size:11px; }
+            &:hover { text-shadow:2px 2px 3px rgba(0, 0, 0, 0.4); text-decoration:none;
+                &:after { text-shadow:none; }
+            }
         }
     }
-}
+
+
+
+    /*
+        * Tablet portret and smartphone
+    */
+    @media only screen and (max-width:767px) {
+        .header_and_content > header {
+            .search_form input[type="text"] { max-width:none; height:48px; background-color:rgba(255, 255, 255, 0.9); top:auto; bottom:0; margin:0; }
+            .search_form { display:block; }
+        }
+
+        body > header nav { padding:39px 0 0;
+            &.active a, &.active .dropdown, &.active .dropdown > button { display:block;
+                &:hover { background-color:#DDD; color:@main_color; }
+            }
+            a, .dropdown > button { width:100%; background-color:#EFEFEF; padding:15px 1%; color:#333; font-size:16px; font-family:'Open sans', Helvetica, Arial, sans-serif; font-weight:600; text-align:center; display:none; }
+            & > button { height:40px; display:block;
+                span { background-color:gray; }
+            }
+            .dropdown { padding:0;
+                button { text-align:center; }
+                ul { width:100%; }
+                a { padding:5px 5%; font-size:14px; text-transform:uppercase; }
+            }
+        }
+    }
 
 /* end of HEADER *//*////////////////////////////////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
