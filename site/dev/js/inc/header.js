@@ -34,7 +34,9 @@ module.exports = function() {
         // toggle animation
         document.querySelector('.js_search').addEventListener('click', function(e) {
             utils.toggleSlide(DOM.html.header_search);
-            DOM.html.header_search.querySelector('input').focus();
+            setTimeout(function() {
+                DOM.html.header_search.querySelector('input').focus();
+            }, 50);
             e.preventDefault();
         });
 

@@ -1,4 +1,13 @@
+/*!###############################
+#                                #
+#      by Claudiu Limban         #
+# http://www.teranacreative.com  #
+#                                #
+##################################*/
+
 'use strict';
+
+
 
 module.exports = {
     /**
@@ -72,56 +81,77 @@ module.exports = {
      *      });
      *
      * TODO
-     *      DELETE and UPDATE (methods)
      *      send TYPE
      *      return TYPE
      */
-    ajax: function() {
-        var http_req = new XMLHttpRequest(),
-            get_fn   = null,
-            post_fn  = null,
-            send_fn  = null;
+    ajax: (function() {
+        var send_fn = function(url, data, method, success_fn, error_fn) {
+                var x          = new XMLHttpRequest(),
+                    success_fn = success_fn || function() {},
+                    error_fn   = error_fn || function() {};
 
-        send_fn = function(url, data, method, success_fn, error_fn) {
-            var x = http_req;
-            x.open(method, url);
-            x.onreadystatechange = function() {
-                if (x.readyState == 4) {
-                    if(x.status === 200) {
-                        success_fn(x.responseText)
-                    } else {
-                        error_fn();
+                x.open(method, url);
+                x.onreadystatechange = function() {
+                    if (x.readyState == 4) {
+                        if(x.status === 200) {
+                            success_fn(x.responseText)
+                        } else {
+                            error_fn();
+                        }
                     }
+                };
+                if(method === 'POST') {
+                    x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 }
+                x.send(data);
+            },
+
+
+            post_fn = function(obj) {
+                var query = [];
+
+                for(var key in obj.data) {
+                    query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
+                }
+                //    url         data           method    success_fn     error_fn
+                send_fn(obj.url, query.join('&'), 'POST', obj.success, obj.error);
+            },
+
+
+            get_fn = function(obj) {
+                var query = [];
+
+                for(var key in obj.data) {
+                    query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
+                }
+                //              url                     data  method    success_fn     error_fn
+                send_fn(obj.url + '?' + query.join('&'), null, 'GET', obj.success, obj.error);
+            },
+
+
+            put_fn = function(obj) {
+                var query = [];
+
+                for(var key in obj.data) {
+                    query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
+                }
+                //       url         data         method  success_fn   error_fn
+                send_fn(obj.url, query.join('&'), 'PUT', obj.success, obj.error);
+            },
+
+
+            delete_fn = function(obj) {
+                var query = [];
+
+                for(var key in obj.data) {
+                    query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
+                }
+                //    url         data            method    success_fn     error_fn
+                send_fn(obj.url, query.join('&'), 'DELETE', obj.success, obj.error);
             };
-            if(method === 'POST') {
-                x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            }
-            x.send(data);
-        };
 
-        get_fn = function(obj) {
-            var query = [];
-
-            for(var key in obj.data) {
-                query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
-            }
-            //              url              data  method    success_fn     error_fn
-            send_fn(obj.url + '?' + query.join('&'), null, 'GET', obj.success, obj.error);
-        };
-
-        post_fn = function(obj) {
-            var query = [];
-
-            for(var key in obj.data) {
-                query.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj.data[key]));
-            }
-            //    url         data         method    success_fn     error_fn
-            send_fn(obj.url, query.join('&'), 'POST', obj.success, obj.error);
-        };
-
-        return {get: get_fn, post: post_fn};
-    },
+        return {post: post_fn, get: get_fn, put: put_fn, delete: delete_fn};
+    })(),
 
 
     /**
@@ -243,5 +273,44 @@ module.exports = {
                 }, 10);
             }
         }
+    },
+
+
+    /**
+    * posta - email obfuscation
+     *
+     * Important: it uses the class 'js_posta'. It is translated to romanian (e-posta = e-mail) for better obfuscation
+     *
+     * Example:
+     *      <p class="js_posta"></p>
+     *
+     *      utils.posta('name', 'gmail', 'com');
+     */
+    posta: function(name, domain, end) {
+        this.forEach(document.querySelectorAll('.js_posta'), function(index, element) {
+            setTimeout(function() {
+                element.innerHTML = '<i class="fa fa-at"></i> <a itemprop="email" href="mailto:' + name + '@' + domain + '.' + end + '">' + name + '@' + domain + '.' + end + '</a>';
+            }, 50);
+        });
+    },
+
+
+    /**
+    * lazy image load
+     *
+     * Example:
+     *      <img class="js_lazy_load" src="" data-source="img_path/img.jpg" />
+     *
+     *
+     *      document.addEventListener("DOMContentLoaded", function() {
+     *          ...
+     *          image_lazy_load();
+     *          ...
+     *      });
+     */
+    image_lazy_load: function() {
+        this.forEach(document.querySelectorAll('.js_lazy_load'), function(index, img) {
+            img.setAttribute('src', img.getAttribute('data-source'));
+        });
     }
 };
