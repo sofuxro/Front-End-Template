@@ -1,11 +1,3 @@
-/*!###############################
-#                                #
-#      by Claudiu Limban         #
-# http://www.teranacreative.com  #
-#                                #
-##################################*/
-
-
 'use strict';
 
 

@@ -7,28 +7,7 @@ var config      = require('./config.js'),        // getting the configuration (l
     gulp        = require('gulp'),               // Gulp core
     jst_concat  = require('gulp-jst-concat'),    // HTML templates compiled into a single JST (javascript template function) file
     gutil       = require('gulp-util'),          // The gulp utility plugin
-    slash       = require('gulp-slash'),         // Converts windows path to unix
-    w3cjs       = require('gulp-w3cjs');         // W3C HTML validator
-
-
-
-/*************************************************************************
-* The actual compilation process
- *
- * @dependencies - it waits until clean its done removing the old files
- ************************************************************************/
-
- gulp.task('html', ['html-clean'], function() {
-    gulp.src(config.html.src)
-        // validating against w3c html validator
-        .pipe(w3cjs())
-
-        // on a less error this will catch it and it won't stop the watch (as would normaly happen)
-        .on('error', gutil.log)
-
-        // the final destination folder
-        .pipe(gulp.dest(config.html.dest));
-});
+    slash       = require('gulp-slash');         // Converts windows path to unix
 
 
 

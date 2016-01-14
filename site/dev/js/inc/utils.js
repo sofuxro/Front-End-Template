@@ -79,10 +79,6 @@ module.exports = {
      *          success: function() { // what to do on success; },
      *          error:   function() { // what to do on error; }
      *      });
-     *
-     * TODO
-     *      send TYPE
-     *      return TYPE
      */
     ajax: (function() {
         var send_fn = function(url, data, method, success_fn, error_fn) {

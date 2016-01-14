@@ -44,7 +44,7 @@ require_dir('./gulp/', { recurse: true });
  * PRODUCTION  (when running 'gulp --production') giving gutil.env.production TRUE
  */
 
-//gulp.task('default', ['less', 'img', 'js', 'html'], function() {
+
 gulp.task('default', ['less', 'img', 'js'], function() {
     // we only start watching in DEVELOPMENT mode;
     // in production we just make the final preparation for the shipping of the files

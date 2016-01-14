@@ -4,6 +4,7 @@
 
 var config      = require('./config.js'),        // getting the configuration (like: img.src, js.dest, etc)
     gulp        = require('gulp'),               // Gulp core
+    cssnano     = require('gulp-cssnano'),       // minify css
     less        = require('gulp-less'),          // Less compiler
     sourcemaps  = require('gulp-sourcemaps');    // Inline maps are embedded in the source file
     gutil       = require('gulp-util');          // The gulp utility plugin
@@ -17,13 +18,16 @@ var config      = require('./config.js'),        // getting the configuration (l
  ************************************************************************/
 
 gulp.task('less', ['less-clean'], function() {
+//gulp.task('less', function() {
     gulp.src(config.less.src)
 
         // start of the source map !!! ONLY IF in DEVELOPMENT else nothing
         .pipe((gutil.env.production !== true) ? sourcemaps.init() : gutil.noop())
 
+        .pipe(less())
+
         // less compiling minification !!! ONLY IF in PRODUCTION
-        .pipe(gutil.env.production ? less({compress: true}) : less())
+        .pipe(gutil.env.production ? cssnano() : gutil.noop())
 
         // on a less error this will catch it and it won't stop the watch (as would normaly happen)
         .on('error', gutil.log)

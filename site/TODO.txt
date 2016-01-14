@@ -1,3 +1,12 @@
+// Luat gulp/js.js din proiectul sigmaCloud - facut pentru teste (in special modificat ca sa putem adauga o destinatie diferita)
+
+
+
+
+
+
+
+
 
 /* Update from time to time the entire build */
 

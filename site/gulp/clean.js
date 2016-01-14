@@ -29,10 +29,10 @@ gulp.task('less-clean', function(cb) {
     // !!! ONLY IF in PRODUCTION
     if(gutil.env.production === true) {
         // we use CallBack to make the task synchronous
-        del([config.less.dest + '*.css'], {force: true}, cb);
-    } else {
-        cb();
+        del.sync([config.less.dest + '*.css'], {force: true});
     }
+
+    cb();
 });
 
 

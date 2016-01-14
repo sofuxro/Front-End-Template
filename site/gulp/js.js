@@ -38,8 +38,8 @@ gulp.task('js', ['jst'], function() {
             gutil.log('JS is rebundling');
 
             return function() {
-                for(var i = 0, len = config.js.src.length; i < len; i++) {
-                    bundler(config.js.src[i])
+                for(var i = 0, len = config.js.files.length; i < len; i++) {
+                    bundler(config.js.files[i].src)
                     // browserify doing its job
                     .bundle()
 
@@ -47,16 +47,16 @@ gulp.task('js', ['jst'], function() {
                     .on('error', gutil.log)
 
                     // use vinyl to make the stream gulp compatible
-                    .pipe(source_vinyl(config.js.names[i]))
+                    .pipe(source_vinyl(config.js.files[i].name))
 
                     // use vinyl to buffer the stream in preparation for uglify !!! ONLY IF in PRODUCTION else nothing
                     .pipe(if_production ? buffer_vinyl() : gutil.noop())
 
                     // obfuscation and minification !!! ONLY IF in PRODUCTION else nothing
-                    .pipe(if_production ? uglify() : gutil.noop())
+                    .pipe(if_production ? uglify({ preserveComments: 'license' }) : gutil.noop())
 
                     // the final destination folder
-                    .pipe(gulp.dest(config.js.dest));
+                    .pipe(gulp.dest(config.js.files[i].dest));
                 }
             }();
         };
