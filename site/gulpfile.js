@@ -20,7 +20,7 @@
 var config       = require('./gulp/config.js'),   // getting the configuration (like: img.src, js.dest, etc)
 //    browser_sync = require('browser-sync'),       // synchronising URLs, interactions and code changes across multiple devices.
     gulp         = require('gulp'),               // Gulp core
-//    gutil        = require('gulp-util'),          // The gulp utility plugin
+    gutil        = require('gulp-util'),          // The gulp utility plugin
     require_dir  = require('require-dir');        // Node helper to require() directories.
 
 

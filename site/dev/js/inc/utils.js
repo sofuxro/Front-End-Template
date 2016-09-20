@@ -76,8 +76,12 @@ module.exports = {
      *      utils.ajax.get({
      *          url:     '/test.php',
      *          data:    {foo: 'bar'},
-     *          success: function() { // what to do on success; },
-     *          error:   function() { // what to do on error; }
+     *          success: function() {
+     *              // what to do on success;
+     *          },
+     *          error:   function() {
+     *              // what to do on error;
+     *          }
      *      });
      */
     ajax: (function() {

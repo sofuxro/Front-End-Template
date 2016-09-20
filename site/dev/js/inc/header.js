@@ -25,7 +25,7 @@ module.exports = function() {
         });
     }
 
-console.log('What file');
+
 
     /**
     * Search in the header
