@@ -18,7 +18,7 @@ var config      = require('./config.js'),        // getting the configuration (l
 gulp.task('img', ['img-clean'], function() {
     gulp.src(config.img.src)
         // Minify images (level 7, lower is too weak) !!! ONLY IF in PRODUCTION else nothing
-        .pipe(gutil.env.production ? imagemin({optimizationLevel: 7}) : gutil.noop())
+        .pipe(gutil.env.production ? imagemin() : gutil.noop())
 
         // the final destination folder
         .pipe(gulp.dest(config.img.dest));

@@ -238,10 +238,13 @@ module.exports = {
 
     /**
     * toggleSlide mimics the jQuery version of slideDown and slideUp
-     * all in one function comparing the max-heigth to 0
+     * all in one function comparing the max-heigth to 0.
+     *
+     * In order to hide the element (that needs to be shown on toggle) use "display: none" NOT
+     * max-heigth:0, or height:0.
      *
      * @param  {Object} - dom element (not jquery element)
-     *         {String} - 'close_only'
+     *         {String} - 'close_only' OR 'open_only'
      */
     toggleSlide: function(el, option) {
         var utils         = this,
