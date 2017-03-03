@@ -14,6 +14,7 @@
         "del":                  "^2.2.2",
         "gulp":                 "^3.9.1",
         "gulp-cssnano":         "^2.1.2",
+        "gulp-eslint":          "^3.x.x",
         "gulp-imagemin":        "^3.1.x",
         "gulp-jst-concat":      "0.0.1",
         "gulp-less":            "^3.3.x",
@@ -24,5 +25,22 @@
         "require-dir":          "^0.3.x",
         "vinyl-buffer":         "^1.0.0",
         "vinyl-source-stream":  "^1.1.0"
+    },
+
+    "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+            "browser":  true,
+            "commonjs": true,
+            "jquery":   true
+        },
+        "rules": {
+            "indent":           ["error", 4],
+            "linebreak-style":  ["error", "unix"],
+            "semi":             ["error", "always"],
+            "comma-dangle":     ["error", "always-multiline"],
+            "no-cond-assign":   ["error", "always"],
+            "no-unused-vars":   ["error"]
+        }
     }
 }
