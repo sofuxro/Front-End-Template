@@ -7,20 +7,22 @@
         "url": "https://github.com/sofuxro/Front-End-Template.git"
     },
 
-  "devDependencies": {
-    "browserify":           "^14.x.x",
-    "del":                  "^2.2.2",
-    "gulp":                 "^3.9.1",
-    "gulp-cssnano":         "^2.1.2",
-    "gulp-imagemin":        "^3.1.x",
-    "gulp-jst-concat":      "0.0.1",
-    "gulp-less":            "^3.3.0",
-    "gulp-slash":           "^1.1.3",
-    "gulp-sourcemaps":      "^2.x.x",
-    "gulp-uglify":          "^2.x.x",
-    "gulp-util":            "^3.0.8",
-    "require-dir":          "^0.3.x",
-    "vinyl-buffer":         "^1.0.0",
-    "vinyl-source-stream":  "^1.1.0"
-  }
+    "devDependencies": {
+        "babel-preset-es2015":  "^6.22.0",
+        "babelify":             "^7.3.x",
+        "browserify":           "^14.x.x",
+        "del":                  "^2.2.2",
+        "gulp":                 "^3.9.1",
+        "gulp-cssnano":         "^2.1.2",
+        "gulp-imagemin":        "^3.1.x",
+        "gulp-jst-concat":      "0.0.1",
+        "gulp-less":            "^3.3.x",
+        "gulp-slash":           "^1.1.3",
+        "gulp-sourcemaps":      "^2.x.x",
+        "gulp-uglify":          "^2.x.x",
+        "gulp-util":            "^3.0.8",
+        "require-dir":          "^0.3.x",
+        "vinyl-buffer":         "^1.0.0",
+        "vinyl-source-stream":  "^1.1.0"
+    }
 }

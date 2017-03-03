@@ -3,6 +3,7 @@
  ************************************************************************/
 
 var config      = require('./config.js'),          // getting the configuration (like: img.src, js.dest, etc)
+    babelify     = require('babelify'),            // Javascript compiler that allows us to use ES6 before its supported by all browsers
     browserify   = require('browserify'),          // Organize your browser code and load modules installed by npm
     gulp         = require('gulp'),                // Gulp core
     gutil        = require('gulp-util'),           // The gulp utility plugin
@@ -26,7 +27,6 @@ gulp.task('js', ['jst'], function() {
                 // required watchify args
                 cache: {}, packageCache: {},
                 // Specify the entry point of your app
-                //entries: [config.js.files[0].src],
                 entries: [src],
                 // enable source map !!! ONLY IF in DEVELOPMENT
                 debug: (if_production !== true)
@@ -40,6 +40,9 @@ gulp.task('js', ['jst'], function() {
             return function() {
                 for(var i = 0, len = config.js.files.length; i < len; i++) {
                     bundler(config.js.files[i].src)
+
+                    .transform('babelify', {presets: ['es2015']})
+
                     // browserify doing its job
                     .bundle()
 

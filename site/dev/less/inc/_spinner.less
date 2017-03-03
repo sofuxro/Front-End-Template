@@ -1,0 +1,101 @@
+
+
+    /*
+     * HTML Structure
+     *
+        <div class="spinner-wrapper">
+            <div class="spinner">
+                <div class="inner">
+                    <div class="gap"></div>
+
+                    <div class="left">
+                        <div class="half-circle"></div>
+                    </div>
+
+                    <div class="right">
+                        <div class="half-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     */
+
+
+
+
+
+    /*
+     * Settings
+     */
+    @size_factor: 1;
+    @border_size: 5px;
+
+
+
+
+
+    .spinner-wrapper { display:block; position:relative; width:100%; min-height:100px; height:100px;
+        .spinner { position:absolute; overflow:hidden; left:50%; margin-left:-50px; -webkit-animation:outer-rotate 2.91667s linear infinite; animation:outer-rotate 2.91667s linear infinite; }
+
+        .spinner .inner { width:100px; height:100px; position:relative; -webkit-animation:sporadic-rotate 5.25s cubic-bezier(.35,0,.25,1) infinite; animation:sporadic-rotate 5.25s cubic-bezier(.35,0,.25,1) infinite}
+
+        .spinner .inner .gap  { position:absolute; left:49px; right:49px; top:0; bottom:0; border-top:10px solid transparent; box-sizing:border-box; }
+
+        .spinner .inner .left, .spinner .inner .right { position:absolute; top:0; height:100px; width:50px; overflow:hidden; }
+
+        .spinner .inner .left .half-circle, .spinner .inner .right .half-circle { position:absolute; top:0; width:100px; height:100px; box-sizing:border-box; border:@border_size solid #4285F4; border-bottom-color:transparent; border-radius:50%; }
+
+        .spinner .inner .left { left:0; }
+
+        .spinner .inner .left .half-circle { left:0; border-right-color:transparent; animation:left-wobble 1.3125s cubic-bezier(.35,0,.25,1) infinite; -webkit-animation:left-wobble 1.3125s cubic-bezier(.35,0,.25,1) infinite;}
+
+        .spinner .inner .right { right:0; }
+
+        .spinner .inner .right .half-circle { right:0; border-left-color:transparent; animation:right-wobble 1.3125s cubic-bezier(.35,0,.25,1) infinite; -webkit-animation:right-wobble 1.3125s cubic-bezier(.35,0,.25,1) infinite; }
+    }
+
+
+    @-webkit-keyframes outer-rotate {
+        0% { -webkit-transform:rotate(0) scale(.5); transform:rotate(0) scale(.5)}
+        100% { -webkit-transform:rotate(360deg) scale(.5); transform:rotate(360deg) scale(.5)}
+    }
+    @keyframes outer-rotate {
+        0% { -webkit-transform:rotate(0) scale(.5); transform:rotate(0) scale(.5)}
+        100% { -webkit-transform:rotate(360deg) scale(.5); transform:rotate(360deg) scale(.5)}
+    }
+    @-webkit-keyframes left-wobble {
+        0%,100% { -webkit-transform:rotate(130deg); transform:rotate(130deg)}
+        50% { -webkit-transform:rotate(-5deg); transform:rotate(-5deg)}
+    }
+    @keyframes left-wobble {
+        0%,100% { -webkit-transform:rotate(130deg); transform:rotate(130deg)}
+        50% { -webkit-transform:rotate(-5deg); transform:rotate(-5deg)}
+    }
+    @-webkit-keyframes right-wobble {
+        0%,100% { -webkit-transform:rotate(-130deg); transform:rotate(-130deg)}
+        50% { -webkit-transform:rotate(5deg); transform:rotate(5deg)}
+    }
+    @keyframes right-wobble {
+        0%,100% { -webkit-transform:rotate(-130deg); transform:rotate(-130deg)}
+        50% { -webkit-transform:rotate(5deg); transform:rotate(5deg)}
+    }
+    @-webkit-keyframes sporadic-rotate {
+        12.5% { -webkit-transform:rotate(135deg); transform:rotate(135deg)}
+        25% { -webkit-transform:rotate(270deg); transform:rotate(270deg)}
+        37.5% { -webkit-transform:rotate(405deg); transform:rotate(405deg)}
+        50% { -webkit-transform:rotate(540deg); transform:rotate(540deg)}
+        62.5% { -webkit-transform:rotate(675deg); transform:rotate(675deg)}
+        75% { -webkit-transform:rotate(810deg); transform:rotate(810deg)}
+        87.5% { -webkit-transform:rotate(945deg); transform:rotate(945deg)}
+        100% { -webkit-transform:rotate(1080deg); transform:rotate(1080deg)}
+    }
+    @keyframes sporadic-rotate {
+        12.5% { -webkit-transform:rotate(135deg); transform:rotate(135deg)}
+        25% { -webkit-transform:rotate(270deg); transform:rotate(270deg)}
+        37.5% { -webkit-transform:rotate(405deg); transform:rotate(405deg)}
+        50% { -webkit-transform:rotate(540deg); transform:rotate(540deg)}
+        62.5% { -webkit-transform:rotate(675deg); transform:rotate(675deg)}
+        75% { -webkit-transform:rotate(810deg); transform:rotate(810deg)}
+        87.5% { -webkit-transform:rotate(945deg); transform:rotate(945deg)}
+        100% { -webkit-transform:rotate(1080deg); transform:rotate(1080deg)}
+    }

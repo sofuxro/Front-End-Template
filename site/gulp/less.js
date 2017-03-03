@@ -18,7 +18,6 @@ var config      = require('./config.js'),        // getting the configuration (l
  ************************************************************************/
 
 gulp.task('less', ['less-clean'], function() {
-//gulp.task('less', function() {
     gulp.src(config.less.src)
 
         // start of the source map !!! ONLY IF in DEVELOPMENT else nothing
